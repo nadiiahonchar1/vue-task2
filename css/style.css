@@ -10,3 +10,15 @@
 input {
   margin-bottom: 20px;
 }
+
+.primary {
+  color: greenyellow;
+}
+
+.secondary {
+  color: green;
+}
+
+.bold {
+  font-weight: 800;
+}
