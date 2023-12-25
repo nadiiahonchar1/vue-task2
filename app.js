@@ -4,7 +4,7 @@ const App = {
       title: "List of notes:",
       placeholder: "Enter a title for you note",
       inputValue: "",
-      notes: [],
+      notes: ["Task1", "Task2", "Task3"],
     };
   },
   //Список методів застосунку
@@ -21,6 +21,9 @@ const App = {
     //     this.addHandler();
     //   }
     // },
+    removeNote(i) {
+      this.notes.splice(i, 1);
+    },
   },
 };
 Vue.createApp(App).mount("#app");
