@@ -9,9 +9,9 @@ const App = {
   },
   //Список методів застосунку
   methods: {
-    inputChangeHandler(e) {
-      this.inputValue = e.target.value;
-    },
+    // inputChangeHandler(e) {
+    //   this.inputValue = e.target.value;
+    // },
     addHandler() {
       if (this.inputValue !== "") {
         this.notes.push(this.inputValue);
@@ -33,6 +33,14 @@ const App = {
   computed: {
     upToNotes() {
       return 100 - this.notes.length;
+    },
+  },
+  watch: {
+    inputValue(value) {
+      //   if (value.length > 10) {
+      //     this.inputValue = "";
+      //   }
+      console.log("inputValue change", value);
     },
   },
 };

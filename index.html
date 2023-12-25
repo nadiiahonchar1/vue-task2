@@ -9,13 +9,21 @@
   <body>
     <div class="container" id="app">
       <div class="card">
-        <h1>{{title}}</h1>
+        <h1 :style="{color: inputValue.length<5 ? 'blue' : 'darkblue'}">
+          {{title}}
+        </h1>
         <div class="form-control">
-          <input
+          <!-- <input
             type="text"
             :placeholder="placeholder"
             v-bind:value="inputValue"
             v-on:input="inputChangeHandler"
+            @keypress.enter="addHandler"
+          /> -->
+          <input
+            type="text"
+            :placeholder="placeholder"
+            v-model="inputValue"
             @keypress.enter="addHandler"
           />
         </div>
