@@ -13,8 +13,10 @@ const App = {
       this.inputValue = e.target.value;
     },
     addHandler() {
-      this.notes.push(this.inputValue);
-      this.inputValue = "";
+      if (this.inputValue !== "") {
+        this.notes.push(this.inputValue);
+        this.inputValue = "";
+      }
     },
     // inputKeyPress(e) {
     //   if (e.key === "Enter") {
@@ -23,6 +25,9 @@ const App = {
     // },
     removeNote(i) {
       this.notes.splice(i, 1);
+    },
+    toUpperCase(item) {
+      return item.toUpperCase();
     },
   },
 };
