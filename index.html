@@ -13,10 +13,10 @@
         <div class="form-control">
           <input
             type="text"
-            v-bind:placeholder="placeholder"
+            :placeholder="placeholder"
             v-bind:value="inputValue"
             v-on:input="inputChangeHandler"
-            v-on:keypress.enter="addHandler"
+            @keypress.enter="addHandler"
           />
         </div>
         <button class="btn" v-on:click="addHandler">Add</button>
@@ -25,6 +25,13 @@
           <li class="list-item" v-for="(myNote, i) in notes">
             {{toUpperCase(myNote)}}
             <button class="btn danger" v-on:click="removeNote(i)">DELL</button>
+          </li>
+          <hr />
+          <li>
+            <strong
+              >Total number of notes: {{notes.length}} | Up to 100 notes left:
+              {{upToNotes}}</strong
+            >
           </li>
         </ul>
         <p class="text" v-else>Please, enter a name of the note</p>

@@ -30,5 +30,10 @@ const App = {
       return item.toUpperCase();
     },
   },
+  computed: {
+    upToNotes() {
+      return 100 - this.notes.length;
+    },
+  },
 };
 Vue.createApp(App).mount("#app");
